@@ -1,0 +1,8 @@
+node_modules/
+.runtime/
+.venv/
+__MACOSX/
+.DS_Store
+.debug/
+*.pth
+teste.png
