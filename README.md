@@ -17,7 +17,7 @@ O **Hyenator** é um projeto acadêmico que une os mundos — muitas vezes dista
 
 Por trás dos panos, o Node.js cospe um script Python inteiro de uma string crua (`String.raw`), salva no disco e invoca o inferno computacional do PyTorch em um processo filho (`child_process.spawn`). O resultado? Um front-end polido, reativo e amigável que esconde maravilhosamente a criatividade acadêmica que roda no back-end.
 
-> **Um problema muito específico, e uma ferramenta feita para ele** — Se você tem uma foto e não sabe se é um Lobo-da-terra ou uma Hiena Malhada, seus problemas acabaram! Uma infraestrutura incrivelmente sofisticada para resolver uma dúvida que você provavelmente nunca teve na vida.
+> **Um problema muito específico, e uma ferramenta feita para ele** — Se você tem uma foto contendo uma hiena e não sabe se é um Lobo-da-terra ou uma Hiena Malhada, seus problemas acabaram! Uma infraestrutura incrivelmente sofisticada para resolver uma dúvida que você provavelmente nunca teve na vida.
 
 ---
 
@@ -26,7 +26,7 @@ Por trás dos panos, o Node.js cospe um script Python inteiro de uma string crua
 - 🧠 **ResNet18 Afiada:** Modelo treinado para distinguir as quatro espécies principais de hienas. Por sua vez, logicamente ele não vai te dar a resposta correta se não testar com... hienas.
 - ⚙️ **Processamento Híbrido:** O Node.js gerencia o tráfego HTTP, os buffers multipart e a paciência do usuário, enquanto o Python (acordado via *spawn*) cuida de multiplicar matrizes gigantescas na CPU ou CUDA.
 - 🎨 **Interface Premium:** Um front-end nativo com suporte a Dark/Light Mode, transições de estado e upload de arquivos limpo via arrastar e soltar.
-- 🧭 **Onboarding Guiado:** Implementação do *Driver.js* num tour interativo, porque apertar um botão de upload é tão complexo que exige um tutorial guiado (brincadeiras à parte, salva a usabilidade e se tratava de um requisito acadêmico).
+- 🧭 **Onboarding Guiado:** Implementação do *Driver.js* num tour interativo, porque apertar um botão de upload é tão complexo que exige um tutorial guiado (brincadeiras à parte, salva a usabilidade e se tratou de um requisito acadêmico).
 - 🔗 **Integração Desacoplada:** API via endpoint RESTful `POST /infer` aceitando `multipart/form-data`, pronto para integrações externas de procedência duvidosa.
 
 | Funcionalidade | O que faz na prática |
@@ -91,14 +91,17 @@ O nosso glorioso modelo pré-treinado na arquitetura `resnet18` **já vai embuti
 models_saved/model.pth
 ```
 Caso queira trazer o *seu próprio* cérebro neural para a festa, fique à vontade. Basta substituir o arquivo existente por um `.pth` contendo o seu `model_state_dict`, o array de `classes` e as `config` adequadas.
-> *Lembrete: se você apagar o arquivo sem colocar outro no lugar, o console gritará com você e a aplicação encerrará em forma de protesto.*
+
+> *Lembrete 1: Se for fazer isso, você tem certeza de que tem um modelo treinado para classificar hienas, né? Caso contrário, recomendo fazer alguns bons ajustes aqui e ali, senão perde todo o sentido da aplicação.*
+
+> *Lembrete 2: se você apagar o arquivo sem colocar outro no lugar, o console gritará com você e a aplicação encerrará em forma de protesto.*
 
 ### 5. Start na Quimera
 Com tudo configurado e a `.venv` ainda no jeito, rode o servidor:
 ```bash
 npm start
 ```
-Se tudo deu certo, acesse `http://localhost:3000` e seja bem-vindo ao Esgoto... digo, ao sistema de classificação animal.
+Se tudo deu certo, acesse `http://localhost:3000` e seja bem-vindo ao... Primeiro e talvez único projeto que classificará hienas na internet? Eu acho... Enfim, aproveite e saiba que ele foi feito com MUITO carinho (e café).
 
 ---
 
@@ -125,7 +128,7 @@ MIT — Porque até uma rede neural julgaradora de hienas merece ser open-source
 
 <div align="center">
   <br />
-  <em>Desenvolvido (muito provavelmente movido a café e prazos apertados) por <a href="https://github.com/LeahRCS">Leah R.C.S.</a></em>
+  <em>Desenvolvido (muito provavelmente movido a café e prazos apertados) pela mente brilhante de <a href="https://github.com/LeahRCS">Leah R.C.S.</a></em>
   <br /><br />
-  <sub>Nenhuma hiena real foi incomodada durante o treinamento desta CNN. Os desenvolvedores, no entanto, ainda se recuperam dos tensores com shape inválido.</sub>
+  <sub>Nenhuma hiena real foi incomodada durante o desenvolvimento e treinamento desta CNN.</sub>
 </div>
