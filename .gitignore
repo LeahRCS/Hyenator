@@ -4,5 +4,4 @@ node_modules/
 __MACOSX/
 .DS_Store
 .debug/
-*.pth
 teste.png

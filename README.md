@@ -15,18 +15,18 @@
 
 O **Hyenator** é um projeto acadêmico que une os mundos — muitas vezes distantes — do Deep Learning e do desenvolvimento Web clássico. Nascido da necessidade de classificar hienas (porque claramente esse é um dos maiores problemas de nossa época), este sistema utiliza uma Rede Neural Convolucional (ResNet18) de respeito, arquitetada dentro de um humilde servidor Node.js.
 
-Por trás dos panos, o Node.js cospe um script Python inteiro de uma string crua (`String.raw`), salva no disco e invoca o inferno computacional do PyTorch em um processo filho (`child_process.spawn`). O resultado? Um front-end polido, reativo e amigável que esconde maravilhosamente a "criatividade" acadêmica que roda no back-end.
+Por trás dos panos, o Node.js cospe um script Python inteiro de uma string crua (`String.raw`), salva no disco e invoca o inferno computacional do PyTorch em um processo filho (`child_process.spawn`). O resultado? Um front-end polido, reativo e amigável que esconde maravilhosamente a criatividade acadêmica que roda no back-end.
 
-> **Satírico, mas implacável** — Se você tem uma foto e não sabe se é um Lobo-da-terra ou uma Hiena Malhada, seus problemas acabaram. Uma infraestrutura incrivelmente sofisticada para resolver uma dúvida que você provavelmente nunca teve na vida.
+> **Um problema muito específico, e uma ferramenta feita para ele** — Se você tem uma foto e não sabe se é um Lobo-da-terra ou uma Hiena Malhada, seus problemas acabaram! Uma infraestrutura incrivelmente sofisticada para resolver uma dúvida que você provavelmente nunca teve na vida.
 
 ---
 
 ## ✨ Principais Funcionalidades
 
-- 🧠 **ResNet18 Afiada:** Modelo treinado para distinguir as quatro espécies principais de hienas. Não jogue fotos de gatos, os resultados podem ofender a IA.
+- 🧠 **ResNet18 Afiada:** Modelo treinado para distinguir as quatro espécies principais de hienas. Por sua vez, logicamente ele não vai te dar a resposta correta se não testar com... hienas.
 - ⚙️ **Processamento Híbrido:** O Node.js gerencia o tráfego HTTP, os buffers multipart e a paciência do usuário, enquanto o Python (acordado via *spawn*) cuida de multiplicar matrizes gigantescas na CPU ou CUDA.
 - 🎨 **Interface Premium:** Um front-end nativo com suporte a Dark/Light Mode, transições de estado e upload de arquivos limpo via arrastar e soltar.
-- 🧭 **Onboarding Guiado:** Implementação do *Driver.js* num tour interativo, porque apertar um botão de upload é tão complexo que exige um tutorial guiado (brincadeiras à parte, salva a usabilidade).
+- 🧭 **Onboarding Guiado:** Implementação do *Driver.js* num tour interativo, porque apertar um botão de upload é tão complexo que exige um tutorial guiado (brincadeiras à parte, salva a usabilidade e se tratava de um requisito acadêmico).
 - 🔗 **Integração Desacoplada:** API via endpoint RESTful `POST /infer` aceitando `multipart/form-data`, pronto para integrações externas de procedência duvidosa.
 
 | Funcionalidade | O que faz na prática |
@@ -86,12 +86,12 @@ pip install -r requirements.txt
 ```
 
 ### 4. A Essência da Aplicação (`model.pth`)
-Nenhum software funciona sem cérebros. Traga seu arquivo `.pth` contendo o `model_state_dict`, o array de `classes` e a `config` (diga-se de passagem, treinada na `resnet18`).
-Copie e renomeie o arquivo para bater exatamente neste caminho:
+O nosso glorioso modelo pré-treinado na arquitetura `resnet18` **já vai embutido no repositório**, descansando tranquilamente na sua pasta natal:
 ```txt
 models_saved/model.pth
 ```
-> *Se essa pasta e o arquivo não existirem, o console gritará com você e encerrará a aplicação.*
+Caso queira trazer o *seu próprio* cérebro neural para a festa, fique à vontade. Basta substituir o arquivo existente por um `.pth` contendo o seu `model_state_dict`, o array de `classes` e as `config` adequadas.
+> *Lembrete: se você apagar o arquivo sem colocar outro no lugar, o console gritará com você e a aplicação encerrará em forma de protesto.*
 
 ### 5. Start na Quimera
 Com tudo configurado e a `.venv` ainda no jeito, rode o servidor:
