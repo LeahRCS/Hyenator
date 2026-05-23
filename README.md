@@ -1,87 +1,131 @@
-# Hyenator — Classificador de Espécies de Hienas
+<div align="center">
+  <h1>🔬 Hyenator 🔬</h1>
+  <p><em>Classificador Convolutional de Espécies de Hienas via Node.js e PyTorch</em></p>
 
-O Hyenator é uma aplicação web completa (Frontend + Backend Node.js + Inferência em PyTorch) projetada para identificar espécies de hienas a partir de fotos. Utilizando uma arquitetura **ResNet18**, o modelo é capaz de distinguir quatro espécies diferentes de hienas: Lobo-da-terra, Hiena Marrom, Hiena Malhada e Hiena Listrada.
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Driver.js-FFB020?style=for-the-badge&logoColor=white" alt="Driver.js" />
+</div>
 
-A interface possui um design moderno, conta com modo claro/escuro e um **tour guiado interativo** para facilitar a navegação de novos usuários.
+<br />
 
----
+## 📖 Sobre o Projeto
 
-## 🛠 Pré-requisitos e Estrutura
+O **Hyenator** é um projeto acadêmico que une os mundos — muitas vezes distantes — do Deep Learning e do desenvolvimento Web clássico. Nascido da necessidade de classificar hienas (porque claramente esse é um dos maiores problemas de nossa época), este sistema utiliza uma Rede Neural Convolucional (ResNet18) de respeito, arquitetada dentro de um humilde servidor Node.js.
 
-- **Node.js** (v18+)
-- **Python 3**
-- Modelo treinado `model.pth` no formato suportado (veja mais abaixo).
+Por trás dos panos, o Node.js cospe um script Python inteiro de uma string crua (`String.raw`), salva no disco e invoca o inferno computacional do PyTorch em um processo filho (`child_process.spawn`). O resultado? Um front-end polido, reativo e amigável que esconde maravilhosamente a "criatividade" acadêmica que roda no back-end.
 
-```txt
-Hyenator/
-├── frontend/             # Arquivos da interface de usuário (HTML/CSS/JS)
-├── models_saved/         # Pasta onde o arquivo model.pth deve ser salvo
-│   └── model.pth
-├── server.js             # Backend Node.js que gerencia a API e o worker Python
-├── package.json
-└── requirements.txt
-```
+> **Satírico, mas implacável** — Se você tem uma foto e não sabe se é um Lobo-da-terra ou uma Hiena Malhada, seus problemas acabaram. Uma infraestrutura incrivelmente sofisticada para resolver uma dúvida que você provavelmente nunca teve na vida.
 
 ---
 
-## 🚀 Como Iniciar o Projeto
+## ✨ Principais Funcionalidades
 
-### 1. Instalar dependências do Node.js
+- 🧠 **ResNet18 Afiada:** Modelo treinado para distinguir as quatro espécies principais de hienas. Não jogue fotos de gatos, os resultados podem ofender a IA.
+- ⚙️ **Processamento Híbrido:** O Node.js gerencia o tráfego HTTP, os buffers multipart e a paciência do usuário, enquanto o Python (acordado via *spawn*) cuida de multiplicar matrizes gigantescas na CPU ou CUDA.
+- 🎨 **Interface Premium:** Um front-end nativo com suporte a Dark/Light Mode, transições de estado e upload de arquivos limpo via arrastar e soltar.
+- 🧭 **Onboarding Guiado:** Implementação do *Driver.js* num tour interativo, porque apertar um botão de upload é tão complexo que exige um tutorial guiado (brincadeiras à parte, salva a usabilidade).
+- 🔗 **Integração Desacoplada:** API via endpoint RESTful `POST /infer` aceitando `multipart/form-data`, pronto para integrações externas de procedência duvidosa.
+
+| Funcionalidade | O que faz na prática |
+| --- | --- |
+| **Worker Python Contínuo** | Fica vivo aguardando requisições JSON via `stdin` e respondendo em `stdout`, driblando o custo de carregamento do PyTorch. |
+| **Classificação Dinâmica** | Lê as classes diretamente do checkpoint; acabou a era do *hardcode* no JavaScript. |
+| **Tour da Aplicação** | Salva a vergonha do usuário em `localStorage` para não ficar enchendo a tela em cada visita. |
+| **Interface Responsiva** | Não importa o tamanho da tela, a Hiena será perfeitamente enquadrada. |
+
+---
+
+## 🛠️ Arquitetura e Tecnologias
+
+O ecossistema escolhido prova que Node.js e Python conseguem conviver no mesmo servidor, mesmo que conversem por debaixo da porta através de I/O padrão.
+
+| Camada | Tecnologia |
+| --- | --- |
+| **Frontend** | Vanilla JS, CSS3 Moderno, HTML5 (Zero dependências obesas de build) |
+| **UX / Onboarding** | Driver.js (Tours guiados que não parecem de 2012) |
+| **Backend API** | Node.js + Express + Multer (gerência de uploads) |
+| **Inferência de IA** | Python 3 + PyTorch + Torchvision |
+| **Modelo da CNN** | ResNet18 (Arquitetura pré-treinada modificada) |
+
+---
+
+## 🚀 Guia de Instalação (Sem Enrolação)
+
+Siga os passos e levante a infraestrutura classificatória na sua máquina.
+
+**Pré-requisitos:** Node.js (v18+) e Python 3 instalados.
+
+### 1. Clonar e Instalar o Node
 ```bash
+git clone https://github.com/LeahRCS/Hyenator.git
+cd Hyenator
 npm install
 ```
 
-### 2. Criar ambiente Python e instalar dependências
-**Linux/macOS:**
+### 2. O Ambiente Virtual do Python
+Sem `venv`, a chance de quebrar o seu sistema operacional com pacotes de ML é alta. Crie o ambiente:
+
+**Linux / macOS:**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
 ```
-**Windows:**
+**Windows PowerShell:**
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
+```
+
+### 3. Instale o Poder de Fogo
+Com o `.venv` ativado, instale as dependências pesadas do ML:
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configurar o Modelo (`model.pth`)
-O sistema espera um arquivo de pesos treinado com a arquitetura `resnet18`. Ele deve ser copiado para a pasta `models_saved/` e renomeado para `model.pth`.
-O checkpoint (salvo via `torch.save`) obrigatoriamente deve ser um dicionário contendo:
-- `model_state_dict`: Os pesos da ResNet18.
-- `classes`: Lista com o nome das classes.
-- `config`: Dicionário com configurações (ex: `{"arch": "resnet18", "input_size": 224}`).
+### 4. A Essência da Aplicação (`model.pth`)
+Nenhum software funciona sem cérebros. Traga seu arquivo `.pth` contendo o `model_state_dict`, o array de `classes` e a `config` (diga-se de passagem, treinada na `resnet18`).
+Copie e renomeie o arquivo para bater exatamente neste caminho:
+```txt
+models_saved/model.pth
+```
+> *Se essa pasta e o arquivo não existirem, o console gritará com você e encerrará a aplicação.*
 
-### 4. Rodar a Aplicação
-Execute o comando abaixo na raiz do projeto:
+### 5. Start na Quimera
+Com tudo configurado e a `.venv` ainda no jeito, rode o servidor:
 ```bash
 npm start
 ```
-Após o servidor inicializar e carregar o modelo PyTorch em memória, acesse a interface web através do seu navegador:
-**http://localhost:3000**
+Se tudo deu certo, acesse `http://localhost:3000` e seja bem-vindo ao Esgoto... digo, ao sistema de classificação animal.
 
 ---
 
-## 🖥 Interface Web (Frontend)
+## 📁 Estrutura do Repositório
 
-O frontend foi desenhado para ser totalmente interativo e robusto. 
-- Arraste ou selecione uma imagem na área de upload.
-- Clique em **Classificar** e a API fará o processamento.
-- **Tour Guiado:** O botão "i" no cabeçalho da página (ou no card para acessos primários) ativará um guia interativo explicando cada componente da interface.
-
-## 📡 API (Endpoint)
-
-Se você desejar utilizar apenas a API sem o frontend via requisições HTTP, o endpoint de inferência é:
-`POST /infer`
-
-**Formato esperado:** `multipart/form-data` com o campo `image`.
-
-Exemplo usando cURL:
-```bash
-curl -X POST http://localhost:3000/infer -F "image=@./foto_hiena.jpg"
+```
+Hyenator/
+├── server.js             # O maestro que levanta a API, serve o HTML e acorda o Python
+├── requirements.txt      # PyTorch, Torchvision, Pillow e companhia limitada
+├── models_saved/         # Lar oficial do model.pth
+├── frontend/             
+│   ├── index.html        # A face do sistema
+│   ├── css/styles.css    # Paleta caprichada e responsividade
+│   └── js/app.js         # Lógica da interface, Tour Guiado e chamadas REST
 ```
 
-## 📝 Tecnologias Utilizadas
-- **Node.js & Express:** Servidor e roteamento.
-- **PyTorch & torchvision:** Inferência de rede neural via worker dedicado em Python.
-- **Driver.js:** Para a criação do tour guiado de onboarding do usuário.
+---
+
+## 📜 Licença
+
+MIT — Porque até uma rede neural julgaradora de hienas merece ser open-source.
+
+---
+
+<div align="center">
+  <br />
+  <em>Desenvolvido (muito provavelmente movido a café e prazos apertados) por <a href="https://github.com/LeahRCS">Leah R.C.S.</a></em>
+  <br /><br />
+  <sub>Nenhuma hiena real foi incomodada durante o treinamento desta CNN. Os desenvolvedores, no entanto, ainda se recuperam dos tensores com shape inválido.</sub>
+</div>
